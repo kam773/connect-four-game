@@ -47,6 +47,7 @@ export default class Grid extends Component {
   };
 
   winningSlice = (a, b, c, d) => {
+    // check if tile is not null and if all sequence belongs to the same player
     return a !== null && a === b && a === c && a === d;
   };
   winVertical = board => {
@@ -105,28 +106,29 @@ export default class Grid extends Component {
         )
           return board[c][r];
   };
-  checkDraw = board => {
-    for (let r = 0; r < 6; r++) {
-      for (let c = 0; c < 7; c++) {
-        if (board[r][c] === null) {
-          return null;
-        }
-      }
-    }
-    return "draw";
-  };
   checkSequence = board => {
     return (
       this.winVertical(board) ||
       this.winHorizontal(board) ||
       this.winDiagonaRight(board) ||
-      this.winDiagonalLeft(board) ||
-      this.checkDraw(board)
+      this.winDiagonalLeft(board)
     );
   };
   componentDidUpdate = () => {
     let winner = this.checkSequence(this.state.grid);
-    console.log(winner);
+    let message;
+    winner === 1
+      ? (message = "Player red wins!")
+      : winner === 2
+      ? (message = "Player yellow wins!")
+      : (message = "");
+
+    if (message !== this.state.winner) {
+      this.setState({
+        winner: message,
+        gameOver: true
+      });
+    }
   };
 
   render() {
@@ -145,6 +147,9 @@ export default class Grid extends Component {
               />
             );
           })}
+        </div>
+        <div className="result">
+          <p className="message">{this.state.winner}</p>
         </div>
       </React.Fragment>
     );

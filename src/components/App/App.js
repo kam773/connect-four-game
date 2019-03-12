@@ -5,7 +5,7 @@ import Grid from "../Grid/Grid";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Grid />
       </div>
     );

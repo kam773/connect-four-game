@@ -1,0 +1,8 @@
+.tile {
+  width: calc(500px / 7 - 8px);
+  height: calc(500px / 7 - 8px);
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 4px;
+}

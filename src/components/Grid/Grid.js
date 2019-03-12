@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Column from "../Column/Column";
-
+import "./style.css";
 export default class Grid extends Component {
   constructor() {
     super();

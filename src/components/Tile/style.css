@@ -6,3 +6,13 @@
   border-radius: 50%;
   margin: 4px;
 }
+.tile div {
+}
+
+.red {
+  background-image: linear-gradient(rgb(255, 255, 255), #9c0505);
+}
+
+.yellow {
+  background-image: linear-gradient(rgb(255, 254, 233), rgb(212, 212, 0));
+}

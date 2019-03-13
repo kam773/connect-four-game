@@ -117,12 +117,12 @@ export default class Grid extends Component {
   componentDidUpdate = () => {
     let winner = this.checkSequence(this.state.grid);
     let message;
+    // change winning player number to string message
     winner === 1
       ? (message = "Player red wins!")
       : winner === 2
       ? (message = "Player yellow wins!")
       : (message = "");
-
     if (message !== this.state.winner) {
       this.setState({
         winner: message,

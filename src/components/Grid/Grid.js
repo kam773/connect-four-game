@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Column from "../Column/Column";
+import Button from '../Button/Button'
 import "./style.css";
 export default class Grid extends Component {
   constructor() {
@@ -134,9 +135,7 @@ export default class Grid extends Component {
   render() {
     return (
       <React.Fragment>
-        <button className="btn" onClick={() => this.initializeBoard()}>
-          New Game
-        </button>
+       <Button initializeBoard={this.initializeBoard}/>
         <div className="grid">
           {this.state.grid.map((_, index) => {
             return (

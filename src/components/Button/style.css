@@ -1,0 +1,14 @@
+.btn {
+  min-width: 3rem;
+  min-height: 1.5rem;
+  font-size: 1.6rem;
+  background-color: #5689db;
+  border: 1px solid #5689db;
+  border-radius: 5px;
+  color: #fff;
+  padding: 7px 3rem;
+  margin: 2rem 0;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3rem;
+}

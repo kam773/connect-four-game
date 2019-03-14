@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Column from "../Column/Column";
-import Button from '../Button/Button'
+import Button from "../Button/Button";
 import "./style.css";
 export default class Grid extends Component {
   constructor() {
@@ -22,6 +22,9 @@ export default class Grid extends Component {
       gameOver: false,
       winner: ""
     });
+  };
+  componentDidMount = () => {
+    this.initializeBoard();
   };
   togglePlayer = () => {
     return this.state.currentMove === this.state.PlayerOne
@@ -135,7 +138,7 @@ export default class Grid extends Component {
   render() {
     return (
       <React.Fragment>
-       <Button initializeBoard={this.initializeBoard}/>
+        <Button initializeBoard={this.initializeBoard} />
         <div className="grid">
           {this.state.grid.map((_, index) => {
             return (
